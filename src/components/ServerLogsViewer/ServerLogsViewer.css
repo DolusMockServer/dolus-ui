@@ -1,0 +1,156 @@
+
+
+.terminal {
+    font-family: monospace;
+    color: white;
+    border: 5px solid  #3d66ff;
+    display: flex;
+    position: relative;
+    
+    flex-direction: column;
+    /* padding: 20px; */
+    margin: auto; /* Center horizontally within the parent container */
+    /* bottom: 0; */
+    width: 50%;
+    height: 50vh;
+    border-radius: 6px; /* Set rounded corners */
+    /* border: border */
+    
+
+  }
+  
+.header {
+  background-color: #333;
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;;
+}
+
+.output-container {
+
+    height: 100%; 
+    border-top: 5px solid #3d66ff;
+    overflow: auto ;
+    background-color: #0d0c1b;
+    white-space: break-spaces ;
+    padding: 0px 10px 5px 10px; /*top right bottom:  left: ;;; */
+    display: block;
+
+
+}
+
+
+.green-dot {
+  height: 10px;
+  width: 10px;
+  background-color:green;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red-dot {
+  height: 10px;
+  width: 10px;
+  background-color:red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+/* Show the tooltip on hover */
+.green-dot:hover::before,
+.red-dot:hover::before {
+  display: block;
+}
+
+
+
+
+
+
+
+
+.output-container-element {
+    /* overflow-x: clip; */
+    /* overflow-wrap: break-word;
+    text-overflow: ellipsis;*/
+    /* word-wrap: break-word;  */
+    padding: 0px 10px 5px 10px; /*top right bottom:  left: ;;; */
+    /* border: 2px solid green; */
+    display: block;
+    white-space: break-spaces ;
+  
+
+}
+  
+
+/* 
+  <div class="sc-62f1d083-2 hOzMcN"><div class="sc-62f1d083-3 khIfwr"><pre><code><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> (
+	<span class="hljs-string">"context"</span>
+	<span class="hljs-string">"fmt"</span>
+	<span class="hljs-string">"dagger.io/dagger"</span>
+)
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> {
+	ctx := context.Background()
+	client, err := dagger.Connect(ctx)
+	<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+		<span class="hljs-built_in">panic</span>(err)
+	}
+	<span class="hljs-keyword">defer</span> client.Close()
+
+	output, err := client.Pipeline(<span class="hljs-string">"test"</span>).
+		Container().
+		From(<span class="hljs-string">"alpine"</span>).
+		WithExec([]<span class="hljs-type">string</span>{<span class="hljs-string">"apk"</span>, <span class="hljs-string">"add"</span>, <span class="hljs-string">"curl"</span>}).
+		WithExec([]<span class="hljs-type">string</span>{<span class="hljs-string">"curl"</span>, <span class="hljs-string">"https://dagger.io"</span>}).
+		Stdout(ctx)
+
+	<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> {
+		<span class="hljs-built_in">panic</span>(err)
+	}
+	fmt.Println(output[:<span class="hljs-number">300</span>])
+}
+</code></pre></div></div> */
+
+/* 
+--rem: 16;
+--blackhole-color-900: #0d0c1b;
+--blackhole-color-500: #858495;
+--blackhole-color-300: #cbcbdd;
+--blackhole-color-50: #f6f5ff;
+--dark-matter-color-600: #2c3251;
+--blackhole-color-700: #4b4b5a;
+--blackhole-color-600: #5e5d6d;
+--blackhole-color-200: #dedef0;
+--blackhole-color: #0d0c1b;
+--blueprint-color: #3d66ff;
+--deep-space: #131226;
+--gravity-color: #40b9bc;
+--halo-color-900: #175761;
+--moonlight-color: #fefad8;
+--moonlight100-color: #faf1ad;
+--neptune-color: #b1e1e3;
+--night-blue: #0e2b3d;
+--primary-font-family: "Montserrat",sans-serif;
+--secondary-font-family: "Karla",sans-serif;
+--starlight-color: #fffef6;
+--sunlight-color: #fcc009;
+--tertiary-font-family: "Open Sans",sans-serif;
+--uranus-color: #66ada0;
+--white-color: #fff;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+box-sizing: border-box;
+background-color: var(--blueprint-color);
+height: 384px;
+display: flex;
+flex-direction: column;
+border-radius: 8px;
+font-size: 1.8rem;
+position: relative;
+color: white;
+width: 100% !important;
+min-width: 530px !important; */
