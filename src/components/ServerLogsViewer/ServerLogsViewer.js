@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ServerLogsViewer.css';
+import DolusApiClient  from '../../DolusApiClient';
 
 var Convert = require('ansi-to-html');
 var convert = new Convert();
@@ -9,13 +10,14 @@ var convert = new Convert();
 function Logs() {
 
     const [data, setData] = useState('Waiting for server logs...');
-    const [dotClass, setDotClass]  = useState('green-dot')
+    const [dotClass, setDotClass] = useState('green-dot')
 
-    
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:1080/v1/dolus/logs');
+
+        const response = await DolusApiClient.getV1DolusLogs();
         const result = await response.text();
+
         const modifiedData = result.split('\n').map((line, index) => convert.toHtml(line)).join('<br>')
         setData(modifiedData)
         setDotClass('green-dot')
@@ -27,7 +29,7 @@ function Logs() {
 
     useEffect(() => {
         // Fetch data initially when the component mounts
-        
+
         fetchData();
     
         // Set up a recurring timer to fetch data every 5 seconds
