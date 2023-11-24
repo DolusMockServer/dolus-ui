@@ -48,7 +48,7 @@ function Logs() {
         
         return (
             <div className="terminal" >
-              <div className="header"> <span className={dotClass} title={getTitle(dotClass)}></span> Server Logs</div>
+              <div className="header"> <span className={dotClass} title={getTitle(dotClass)}></span> SERVER LOGS</div>
                 <div className="output-container" id="output-container" dangerouslySetInnerHTML={{ __html: data }} >
                     
               </div>

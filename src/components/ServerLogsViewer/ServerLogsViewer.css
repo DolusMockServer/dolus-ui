@@ -2,7 +2,7 @@
 
 .terminal {
     font-family: monospace;
-    color: white;
+    color: black;
     border: 5px solid  #3d66ff;
     display: flex;
     position: relative;
@@ -21,6 +21,7 @@
   
 .header {
   background-color: #333;
+  color: white;
   padding: 5px;
   font-weight: bold;
   text-align: center;
@@ -32,7 +33,7 @@
     height: 100%; 
     border-top: 5px solid #3d66ff;
     overflow: auto ;
-    background-color: #0d0c1b;
+    background-color: white;
     white-space: break-spaces ;
     padding: 0px 10px 5px 10px; /*top right bottom:  left: ;;; */
     display: block;
