@@ -58,5 +58,19 @@ function Logs() {
 
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  
+  document.getElementById("loader").style.display = "block";
+
+  
+  setTimeout(function() {
+    
+    document.getElementById("loader").style.display = "none";
+    
+    // Display the main content
+    document.getElementById("main-content").style.display = "block";
+  }, 2000); 
+});
+
 
 export default Logs;
