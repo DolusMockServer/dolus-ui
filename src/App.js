@@ -1,9 +1,6 @@
 import './App.css';
 import Logs from './components/ServerLogsViewer/ServerLogsViewer';
 
-
-
-
 function App() {
 
   return (
